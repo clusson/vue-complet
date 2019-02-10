@@ -8,12 +8,12 @@ export default new Router({
   mode: "history",
   routes: [
     {
-      path: "/",
+      path: "/vue-complet/",
       name: "home",
       component: Home
     },
     {
-      path: "/about",
+      path: "/vue-complet/about",
       name: "about",
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
