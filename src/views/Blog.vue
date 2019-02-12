@@ -1,28 +1,18 @@
 <template>
-  <v-container grid-list-md>
-    <v-layout v-if="!received">
-      <v-progress-linear
-        color="orange"
-        :indeterminate="true"
-      ></v-progress-linear>
-    </v-layout>
-    <v-layout v-else-if="received" fill-height full-width>
-      <v-container>
-        <v-text-field
-          class="mx-3"
-          flat
-          label="Recherche"
-          prepend-inner-icon="search"
-          v-model="search"
-          solo-inverted
-        ></v-text-field>
+	<v-container grid-list-md>
+		<v-layout v-if="!received">
+			<v-progress-linear color="orange" :indeterminate="true"></v-progress-linear>
+		</v-layout>
+		<v-layout v-else-if="received" fill-height full-width>
+			<v-container>
+				<v-text-field class="mx-3" flat label="Recherche" prepend-inner-icon="search" v-model="search" solo-inverted></v-text-field>
 
-        <v-flex v-for="post in filteredPosts" :key="post.id">
-          <Post :post="post" />
-        </v-flex>
-      </v-container>
-    </v-layout>
-  </v-container>
+				<v-flex v-for="post in filteredPosts" :key="post.id">
+					<Post :post="post" />
+				</v-flex>
+			</v-container>
+		</v-layout>
+	</v-container>
 </template>
 
 <script>
@@ -50,7 +40,6 @@ export default {
   computed: {
     filteredPosts: function() {
       return this.posts.filter(post => {
-        console.log(post);
         return (
           post.title.rendered
             .toLowerCase()
@@ -71,7 +60,7 @@ export default {
           this.received = true;
         })
         .catch(e => {
-          console.log("Error : ", e);
+          return e
         });
     });
   }
