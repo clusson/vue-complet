@@ -35,18 +35,5 @@
     "vue-template-compiler": "^2.5.21",
     "vuetify-loader": "^1.0.5"
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
   "homepage": "https://github.com/clusson/vue-complet.git",
-  "lint-staged": {
-    "*.js": [
-      "vue-cli-service lint",
-      "git add"
-    ],
-    "*.vue": [
-      "vue-cli-service lint",
-      "git add"
-    ]
-  }
 }
