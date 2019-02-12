@@ -15,6 +15,14 @@
 <script>
 export default {
   name: "Post",
+  posts: [
+    {
+      title: "",
+      content: "",
+      date: "",
+      timeExpired: ""
+    }
+  ],
   props: {
     msg: String
   }
