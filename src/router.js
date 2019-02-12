@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
+import Blog from "./views/Blog.vue";
 
 Vue.use(Router);
 
@@ -9,8 +9,8 @@ export default new Router({
   routes: [
     {
       path: "/vue-complet",
-      name: "vue-complet/home",
-      component: Home
+      name: "vue-complet/blog",
+      component: Blog
     },
     {
       path: "/about",

@@ -1,48 +1,41 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <img src="../assets/logo.png" width="200" />
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br />
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
-        >vue-cli documentation</a
-      >.
-    </p>
-  </div>
+  <v-layout>
+    hello1
+    <v-flex xs12 sm6 offset-sm3>
+      <v-card>
+        <v-card-title primary-title>
+          <div>
+            <div class="headline" :v-bind="post.title.rendered"></div>
+            <span class="grey--text">
+              Posté le : <span :v-bind="post.date"></span
+            ></span>
+          </div>
+        </v-card-title>
+        <v-card-text>
+          <span v-html="post.content.rendered"> </span>
+        </v-card-text>
+        <span class="grey--text"></span>
+      </v-card>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
 export default {
   name: "Post",
-  posts: [
-    {
-      title: "",
-      content: "",
-      date: "",
-      timeExpired: ""
+  props: ["post"],
+  data() {
+    return {
+      errors: []
+    };
+  },
+  filters: {
+    limitContent(value) {
+      return value.toUpperCase();
     }
-  ],
-  props: {
-    msg: String
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
+<style scoped lang="scss"></style>

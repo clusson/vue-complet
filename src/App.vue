@@ -2,32 +2,28 @@
   <v-app>
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
+        <span>VUEJS</span>
+        <span class="font-weight-light">WORDPRESS API</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
+      <v-btn flat href="https://github.com/clusson/vue-complet" target="_blank">
+        <span class="mr-2">Lien Github</span>
       </v-btn>
     </v-toolbar>
 
     <v-content>
-      <HelloWorld />
+      <Blog />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+import Blog from "./views/Blog";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    Blog
   },
   data() {
     return {
