@@ -1,24 +1,24 @@
 <template>
-	<v-layout v-if="!received">
-		<v-progress-linear color="orange" :indeterminate="true"></v-progress-linear>
-	</v-layout>
-	<v-layout v-else-if="received" justify-center>
-		<v-container xs12 sm10>
-			<div class="article">
-				<h1><span v-html="article.title.rendered"></span></h1>
-				<span class="grey--text">
-					Publié le :
-					<span v-html="$options.filters.formatDate(article.date, 100)"></span>
-				</span>
-				<blockquote class="blockquote">
-					<span v-html="article.content.rendered"></span>
-				</blockquote>
-			</div>
-			<v-btn flat color="orange darken-2" :to="{ name: 'blog' }" dark>
-				<v-icon dark left>arrow_back</v-icon>Retour
-			</v-btn>
-		</v-container>
-	</v-layout>
+  <v-layout v-if="!received">
+    <v-progress-linear color="orange" :indeterminate="true"></v-progress-linear>
+  </v-layout>
+  <v-layout v-else-if="received" justify-center>
+    <v-container xs12 sm10>
+      <div class="article">
+        <h1><span v-html="article.title.rendered"></span></h1>
+        <span class="grey--text">
+          Publié le
+          <span v-html="$options.filters.formatDate(article.date, 100)"></span>
+        </span>
+        <blockquote class="blockquote">
+          <span v-html="article.content.rendered"></span>
+        </blockquote>
+      </div>
+      <v-btn flat color="orange darken-2" :to="{ name: 'blog' }" dark>
+        <v-icon dark left>arrow_back</v-icon>Retour
+      </v-btn>
+    </v-container>
+  </v-layout>
 </template>
 
 <script>
@@ -30,12 +30,12 @@ export default {
   data() {
     return {
       article: "",
-      received: false,
+      received: false
     };
   },
   filters: {
     formatDate(value) {
-      return moment(value).format("DD-MM-YYYY");
+      return moment(value).format("DD MMMM YYYY");
     },
     truncate: function(value, limit) {
       if (value.length > limit) {

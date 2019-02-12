@@ -1,29 +1,29 @@
 <template>
-  <v-layout>
-    <v-flex xs12>
-      <v-card>
-        <v-card-title primary-title>
-          <div>
-            <div class="headline">
-              <span v-html="post.title.rendered"></span>
-            </div>
-            <span class="grey--text">
-              Posté le :
-              <span v-html="$options.filters.formatDate(post.date, 100)"></span>
-            </span>
-          </div>
-        </v-card-title>
-        <v-card-text>
-          <span v-html="$options.filters.truncate(post.content.rendered, 100)">
-          </span>
-          <span class="grey--text">{{ sinceDate }}</span>
-        </v-card-text>
-        <v-card-actions>
-          <v-btn flat color="orange" :to="path">Lire la suite</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+	<v-layout>
+		<v-flex xs12>
+			<v-card>
+				<v-card-title primary-title>
+					<div>
+						<div class="headline">
+							<span v-html="post.title.rendered"></span>
+						</div>
+						<span class="grey--text">
+							Posté le
+							<span v-html="$options.filters.formatDate(post.date, 100)"></span>
+						</span>
+					</div>
+				</v-card-title>
+				<v-card-text>
+					<span v-html="$options.filters.truncate(post.content.rendered, 100)">
+					</span>
+					<span class="grey--text">{{ sinceDate }}</span>
+				</v-card-text>
+				<v-card-actions>
+					<v-btn flat color="orange" :to="path">Lire la suite</v-btn>
+				</v-card-actions>
+			</v-card>
+		</v-flex>
+	</v-layout>
 </template>
 
 <script>
@@ -39,7 +39,7 @@ export default {
   },
   filters: {
     formatDate(value) {
-      return moment(value).format("DD-MM-YYYY");
+      return moment(value).format("DD MMMM YYYY");
     },
     truncate: function(value, limit) {
       if (value.length > limit) {
