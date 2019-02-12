@@ -2,7 +2,7 @@
 
 ## Lien de déploiement
 
-https://zealous-swartz-fbeed6.netlify.com/
+https://vue-complet-clusson.netlify.com/
 
 ## Project setup
 ```
